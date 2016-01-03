@@ -1,5 +1,5 @@
 @scriptname="layer ticker from file";
-@author="kyle";
+@author="Kyle";
 @version="MADRIX 2.10";
 @description="Pull text form file in to ticker effect";
 
