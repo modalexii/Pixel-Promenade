@@ -1,7 +1,7 @@
-@scriptname="";
-@author="";
-@version="";
-@description="";
+@scriptname="master cue to ticker governor";
+@author="Kyle";
+@version="MADRIX 2.10";
+@description="Fade main output to ticker when text source file is not empty";
 
 void InitEffect() { }
 
