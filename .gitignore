@@ -1,3 +1,8 @@
-# automatic backups
+# MADRIX automatic backups
 *.msbackup
 
+# meta junk
+.sublime-project
+
+# API keys
+apikeys.py
