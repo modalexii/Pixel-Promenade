@@ -6,6 +6,7 @@ An interactive LED light canopy comprised of a matrix of over 10,000 LEDs on dis
 * MADRIX scripts that govern the interactive and noninteravtive functions
 * Arduino sketches running the Art-Net endpoints that drive the canopy LEDs
 * The Twitter application that pulls user-submitted text and feeds it to MADRIX
+* The performance monitoring script that runs on the lighting control system
 
 ## Links
 

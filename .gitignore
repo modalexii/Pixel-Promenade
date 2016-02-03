@@ -6,3 +6,6 @@
 
 # API keys
 apikeys.py
+
+# compiled 
+*.pyc
