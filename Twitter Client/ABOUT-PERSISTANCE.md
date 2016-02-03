@@ -20,10 +20,10 @@ The pickled object could look like this:
 
     user_info = {
         432345654: {
-            u'screen_name': u'@ScreenNameEg',
+            u'screen_name': u'ScreenNameEg',
             u'bypass_filters' : True,
             u'permaban' : False,
-            u'next_post_allowed' : "123123",
+            u'next_post_allowed' : datetime.datetime(),
             u'accepted_tweets' : [683418747743240193],
             u'rejected tweets' : [678454278853242100, 680185203973032551],
             u'throttle_factor' : 4

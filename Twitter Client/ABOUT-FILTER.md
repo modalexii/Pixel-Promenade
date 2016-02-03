@@ -3,7 +3,10 @@
 This document describes the filters and limits that govern which messages will be displayed. If you are tweeting [@PixelPromenade](https://twitter.com/pixelpromenade) and your messages are not appearing, please read carefully.
 
 ### Your tweet contains unacceptable language
-Though we rather dislike limiting speech, PixelPromenade is a family friendly public display and as such we have taken reasonable measures to block messages with curse words, sexually explicit language, or bad attitudes.
+Though we rather dislike limiting speech, PixelPromenade is a family friendly public display and as such we have taken reason
+
+### Your Tweet contains emoji or other unsupported characters
+PixelPromenade can only display characters from Latin alphabets (specifically  [CP-1252 encoding](http://www.cp1252.com/)). Messages with emoji or unicode characters outside of this set will not be displayed.
 
 ### Your tweet contains photo, video, or ticker symbols
 PixelPromenade only displays text and will throw away any tweet with visual media attached. Additionally, messages containing financial symbols (a dollar sign followed by a stock designation, e.g. "[$BGE](#)" ) will not be shown.
