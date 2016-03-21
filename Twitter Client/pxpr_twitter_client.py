@@ -1,4 +1,5 @@
 #! python3
+# -*- coding: utf-8 -*-
 
 def fetch_tweets():
 
@@ -15,7 +16,6 @@ def fetch_tweets():
         tso.set_locale("en") # en locale to avoid odd chars, != language
         #tso.set_keywords(["@PixelPromenade", "#DisplayText"])
         tso.set_keywords([config.handle, config.hashtag])
-        tso.set_positive_attitude_filter() # this may quietly block a lot of content
         tso.set_result_type("recent")
         tso.set_count(config.tweetpullcount) # API max = 100
         tso.set_include_entities(True) # https://dev.twitter.com/overview/api/entities-in-twitter-objects
@@ -175,7 +175,9 @@ def load_dev_tweets():
 def main():
 
     logging.debug("args: {}".format(sys.argv[1:]))
+    unfiltered_tweets = None
 
+    
     if "{} {}".format(sys.argv[1],sys.argv[2]) == "devmode save":
         save_dev_tweets()
         logging.info("exiting devmode save")
@@ -185,12 +187,13 @@ def main():
     elif sys.argv[1]:
         logging.critical("invalid arg {}".format( " ".join(sys.argv[1:])) )
         exit(1)
+    
 
     users = persist.load( "{}/{}".format(script_dir, config.user_info) )
 
     if not unfiltered_tweets:
         unfiltered_tweets = fetch_tweets()
-        
+
     (accepted_tweets, rejected_tweets) = filters.run_tests(
         unfiltered_tweets,
         users
@@ -211,14 +214,12 @@ def main():
 
 if __name__ == "__main__":
 
-    import sys, os, datetime, logging
+    import sys, os, datetime, logging, TwitterSearch
 
     script_dir = os.path.dirname( os.path.realpath(__file__) )
     sys.path.append( script_dir )
-    sys.path.append( "{}/lib/requests-oauthlib".format(script_dir) )
-    sys.path.append( "{}/lib/TwitterSearch".format(script_dir) )
     
-    import config, persist, filters, TwitterSearch
+    import config, persist, filters
 
     logging.basicConfig(
         filename = config.run_log, 
