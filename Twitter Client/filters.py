@@ -1,9 +1,12 @@
+#! python3
+# -*- coding: utf-8 -*-
+
 import sys, os, logging
 
 script_dir = os.path.dirname( os.path.realpath(__file__) )
 sys.path.append( script_dir )
 
-import config
+import config, persist
 
 def is_retweet(t):
 
@@ -76,41 +79,66 @@ def has_unsupported_chars(t):
     Given a dict representing a tweet, return true if it contains characters
     outside of Windows-1252
     '''
-
     try:
-        t["text"].decode("cp1252")
+        t["text"].encode("cp1252")
     except UnicodeEncodeError:
         return True
 
 
-def user_rate_limited(users, uid):
+def user_rate_limited(uid):
 
     '''
-    Given user ID, return True if current time is before next_post_allowed
+    Given user ID, return True if user is known and less than tweet_delay time
+    has passed
     '''
 
     from datetime import datetime
 
-    n = users[uid]["next_post_allowed"]
+    config.tweet_delay
+    with open (config.user_info, "r") as f:
+        user_info = f.readlines()
 
-    try:
-        n = datetime.strptime(n, "%X %x")
-    except ValueError:
-        pass
+    now = datetime.now()
+
+    for index, i in enumerate(user_info):
+        entry = i.split(" ")
+        if entry[0] == uid:
+            # user is known
+            last_time = datetime.strptime(entry[1], "%c")
+            delta = now - last_time
+            if delta.seconds < config.tweet_delay:
+                # deny
+                return True
+            else:
+                # ok, and update timestamp
+                user_info[index] = "{} {}\n".format(uid, now.strftime("%c"))
+                with open(config.user_info, "wb") as f:
+                    f.write("{}\n".format(user_info))
+
+
+        # this user was not known - add them to the list
+        with open(config.user_info, "a") as f:
+            f.write("{} {}\n".format(uid, now.strftime("%c")))
+
+
+def already_seen(t):
+
+    '''
+    Given a dict representing a tweet, return true if we have already seen
+    the tweet id
+    '''
+
+    with open (config.ids_file, "r") as f:
+        id_history = f.readlines()
+    if "{}\n".format(t["id"]) in id_history:
+        return True
     else:
-        if n < datetime.now():
-            return True
-
+        # add ID to file
+        with open(config.ids_file, "a") as f:
+            f.write("{}\n".format(t["id"]))
     
 
-
-'''
-def display_rate_limited():
-    PLACE HOLDER. DECIDE HOW TO QUANTIFY THIS.
-
-'''
-
-def run_tests(tweets, users):
+def run_tests(tweets):
 
     '''
     Given tweets from fetch_tweets(), return lists of those that pass the
@@ -129,57 +157,49 @@ def run_tests(tweets, users):
         uid = t["user"]["id"]
         sn = t["user"]["screen_name"]
 
-        # Get user info, or create a new entry if this user is not in our
-        # records
-
-        try:
-
-            users[uid]
-            logging.debug("processing tweet {} from known user {}".format(uid, sn))
-
-            if users[uid][bypass_filters]:
-                continue
-
-        except KeyError:
-
-            logging.debug("processing tweet {} from new user {}".format(uid, sn ))
-            users[uid] = persist.generate_user_entry(sn)
+        if has_unsupported_chars(t):
+            # keep this at the top or else non-windows chars throw logging error
+            import urllib
+            encoded_text =  urllib.parse.quote_plus(t["text"])
+            logging.info("Reject badchar \"{}\" from @{}".format(encoded_text, sn))
+            reject_tweets.append(t)
+            continue
 
         if is_retweet(t):
-            logging.info("Reject retweet https://twitter.com/statuses/{} from @{}".format(uid, sn))
+            logging.info("Reject retweet \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
         if has_url(t):
-            logging.info("Reject hyperlink https://twitter.com/statuses/{} from @{}".format(uid, sn))
+            logging.info("Reject hyperlink \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
         if has_media(t):
-            logging.info("Reject media https://twitter.com/statuses/{} from @{}".format(uid, sn))
+            logging.info("Reject media \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
         if has_financial_symbols(t):
-            logging.info("Reject tickersymbol https://twitter.com/statuses/{} from @{}".format(uid, sn))
+            logging.info("Reject tickersymbol \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
         if has_blacklisted_words(t):
-            logging.info("Reject badword https://twitter.com/statuses/{} from @{}".format(uid, sn))
+            logging.info("Reject badword \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
-        if has_unsupported_chars(t):
-            logging.info("Reject badchar https://twitter.com/statuses/{} from @{}".format(uid, sn))
+        if already_seen(t):
+            logging.info("Reject historical \"{}\" from @{}".format(t["text"], sn))
             reject_tweets.append(t)
             continue
 
-        if user_rate_limited(users, uid):
-            logging.info("Reject limiteduser @{}".format(uid))
+        if user_rate_limited(uid):
+            logging.info("Reject limiteduser @{} for \"{}\"".format(uid, t["text"]))
             reject_tweets.append(t)
             continue
-
+        
         # If t made it this far, it is ok to  display. Add it to list of items
         # to return.
         acceptable_tweets.append(t)

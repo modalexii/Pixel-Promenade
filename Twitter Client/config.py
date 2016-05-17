@@ -1,32 +1,45 @@
+#! python3
+# -*- coding: utf-8 -*-
+
 # search keyword 1: the handle
-handle = "@cnn" # "@PixelPromenade"
+handle = "@PixelPromenade" # "@PixelPromenade"
 
 # search keyword 2: the hash tag
-hashtag = "#isis" # "#DisplayText"
+hashtag = "#letsglow" # "#letsglow"
 
 # seconds between subsequent writes to the source file
-write_delay = 120
+write_delay = 60
 
-# seconds until the source file is cleared after a write
-write_clear_delay = 10
+# seconds to keep text in the source file
+write_hold = 100
 
 # max number tweets to write before stopping (tweets after this are discarded)
 writes_per_execution = 3
 
 # number of tweets to request from Twitter
-tweetpullcount = 5
+tweetpullcount = 50
+
+# number of seconds before a previously seen user has a chance of passing
+# filters next
+tweet_delay = 15*60
 
 # file that MADRIX uses as ticker source
-ticker_source = "/tmp/MADRIXtickersrc.txt"
+ticker_source = "C:\\ProgramData\\MADRIX\\ticker_src.txt"
 
 # file containing persistent data on users.
-user_info = "persist/user_info.p"
+user_info = "persist/user_info.txt"
+
+# file containing backlogged tweets
+backlog = "persist/backlog.txt"
 
 # file logging runtime events
 run_log = "persist/main.log"
 
 # file storing tweets for development functionality
 dev_tweets = "persist/dev_tweets.p"
+
+# file storing tweet IDs
+ids_file = "persist/ids.txt"
 
 # run_log format
 log_format = "%(asctime)s %(levelname)s:%(message)s"

@@ -36,22 +36,6 @@ def fetch_tweets():
 
     return ts.search_tweets_iterable(tso)
 
-def strip_hashtag(tweets, hashtag):
-
-    '''
-    Given tweets from fetch_tweets(), remove the hashtag
-    '''
-
-    logging.debug("removing hashtags, object len {}".format(len(tweets)))
-
-    for t,n in enumerate(tweets):
-
-        words = t["text"].split(" ")
-        words = words.remove(hashtag)
-        t["text"] = " ".join(words)
-        tweets[i] = t
-
-    return tweets
 
 def build_writeout(tweets):
 
@@ -60,71 +44,44 @@ def build_writeout(tweets):
     written to the display
     '''
 
-    logging.debug("building writeout, object len {}".format(len(tweets)))
+    import html.parser
+    h = html.parser.HTMLParser()
 
     writeout = []
 
+    '''
+    num_tweets = len(tweets)
+
+    if num_tweets > config.writes_per_execution:
+        # read from backlog
+        with open(persist.backlog, "r") as f:
+            backlog = f.readlines()
+
+        for i in config.writes_per_execution - num_tweets:
+            try:
+                tweets.append(backlog[0])
+                backlog = backlog[1:]
+
+        # save backlog file without 
+
+    '''
     for t in tweets:
-        text = "{}: {}".format(t["users"]["screen_name"], t["text"])
+        text = "@{}: {}".format(t["user"]["screen_name"], t["text"])
+        text = h.unescape(text) # replace html entities
+        text = text.replace("\n", " ").replace("\r", "")
         writeout.append(text)
 
-    return writeout
+    # save excess writeout
+    with open(config.backlog, "a") as f:
+        f.write("{}\n".format(writeout[config.writes_per_execution:]))
 
+    # return configured number of tweets
+    return writeout[:config.writes_per_execution]
 
-def update_user_info(users, accepted_tweets, rejected_tweets):
-
-    '''
-    Update persistant user data fields
-    '''
-
-    logging.debug("updating user info")
-
-    delay = datetime.timedelta(hours=2)
-    now = datetime.datetime.now()
-    next_base = now + delay
-
-    for t in accepted_tweets:
-
-        uid = t["user"]["id"]
-
-        # reset throttle
-        users[uid]["throttle_factor"] = 1
-
-        # set next post time
-        n = datetime.datetime.strftime(next_base, "%X %x")
-        users[uid]["next_post_allowed"] = n
-
-        # add tweet id to list of accepted tweets
-        users[uid][accepted_tweets].append(t["id"])
-    
-
-    for t in rejected_tweets:
-
-        uid = t["user"]["id"]
-
-        # if user is new or has been good throttle will be 1 - decrement it to
-        # allow them to try again soon. Else, increse throttle.
-        if users[uid]["throttle_factor"] == 1:
-            users[uid]["throttle_factor"] = .25
-        elif users[uid]["throttle_factor"] < 1:
-            users[uid]["throttle_factor"] = 1
-        else:
-            users[uid]["throttle_factor"] += 1
-
-        # set next post time
-        n = next_base * users[uid]["throttle_factor"]
-        n = datetime.datetime.strftime(n, "%X %x")
-        users[uid]["next_post_allowed"] = next_post_allowed
-
-        # add tweet id to list of accepted tweets
-        users[uid][rejected_tweets].append(t["id"])
-
-    return users
-
-def writeout_text(writeout):
+def display(writeout):
     
     '''
-    Given list of string from build_writeout(), write each to the ticker
+    Given list of strings from build_writeout(), write each to the ticker
     source file in succession
     '''
 
@@ -133,83 +90,30 @@ def writeout_text(writeout):
     from time import sleep
 
     for i in writeout:
-        logging.info("writeout \"{}\"".format(i))
+        logging.info("display \"{}\"".format(i))
         with open(config.ticker_source, 'w') as f:
             f.write(i)
-        sleep(config.write_clear_delay)
+        sleep(config.write_hold)
         logging.debug("clearing ticker source")
         with open(config.ticker_source, 'w') as f:
             f.write("")
         sleep(config.write_delay)
 
-def save_dev_tweets():
-
-    '''
-    Fetch tweets and save the object to disk for use with load_tweets_dev()
-    '''
-
-    logging.info("DEVELOPMENT MODE - fetching tweets and writing to disk")
-
-    tweets = fetch_tweets()
-    persist.dump(tweets, "{}/{}".format(script_dir, config.dev_tweets))
-
-def load_dev_tweets():
-
-    '''
-    Load tweets saved by save_dev_tweets()
-    '''
-
-    # using pickle directly is cleaner than using the persist.load() wrapper,
-    # which requires importing TwitterSearch and prerequisite actions in
-    # persist
-    import pickle
-
-    logging.info("DEVELOPMENT MODE - loading tweets from disk")
-
-    tweets = pickle.load(
-        open( "{}/{}".format(script_dir, config.dev_tweets, "rb") )
-    )
-
-    return tweets
 
 def main():
 
-    logging.debug("args: {}".format(sys.argv[1:]))
-    unfiltered_tweets = None
-
-    
-    if "{} {}".format(sys.argv[1],sys.argv[2]) == "devmode save":
-        save_dev_tweets()
-        logging.info("exiting devmode save")
-        exit(0)
-    elif "{} {}".format(sys.argv[1],sys.argv[2]) == "devmode load":
-        unfiltered_tweets = load_dev_tweets()
-    elif sys.argv[1]:
-        logging.critical("invalid arg {}".format( " ".join(sys.argv[1:])) )
-        exit(1)
-    
-
-    users = persist.load( "{}/{}".format(script_dir, config.user_info) )
-
-    if not unfiltered_tweets:
-        unfiltered_tweets = fetch_tweets()
+    unfiltered_tweets = fetch_tweets()
 
     (accepted_tweets, rejected_tweets) = filters.run_tests(
         unfiltered_tweets,
-        users
+        #users
     )
 
-    accepted_tweets = strip_hashtag(accepted_tweets, config.hashtag)
-
-    users = update_user_info(users, )
-    persist.dump( users, "{}/{}".format(script_dir, config.user_info) )
-
     wo = build_writeout(accepted_tweets)
-    wo = wo[:config.writes_per_execution]
-    writeout_text(wo)
+    display(wo)
 
     logging.info("End execution")
-    exit(0)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<madrix_device_settings_dmx version="0x03000000" product_version="0x03050100">
+	<product>MADRIX v3.5a - 32 Bit (v3.5.1.0) compile Dec 11 2015 - (c)inoage GmbH</product>
+	<save_date>2016/02/20 12:06:22</save_date>
+	<dmx_device_settings version="0x03000000">
+		<!--DMX OUT/IN Device Settings with 9 DMX Devices-->
+		<dmx_device version="0x03000000" index="0">
+			<title value="Ctrlr A Strip 8 (manual 1, 10.0.1.101) Port:0 "/>
+			<universe value="9"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="1"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="4355BCB6-E174-46E9-B4F6-0F1BC0E1DFBE"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 8"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 8"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="8"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="9"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="1">
+			<title value="Ctrlr A Strip 7 (manual 11, 10.0.1.101) Port:0 "/>
+			<universe value="8"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="11"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="B9171ECC-8669-45B9-9FB1-799F2C66B14B"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 7"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 7"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="7"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="8"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="2">
+			<title value="Ctrlr A Strip 6 (manual 12, 10.0.1.101) Port:0 "/>
+			<universe value="7"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="12"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="E9696243-655A-43D2-A90B-A73B30FADFBD"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 6"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 6"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="6"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="7"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="3">
+			<title value="Ctrlr A Strip 5 (manual 13, 10.0.1.101) Port:0 "/>
+			<universe value="6"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="13"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="ED43E58A-11D1-4118-89DB-BEAD783C9F39"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 5"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 5"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="5"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="6"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="4">
+			<title value="Ctrlr A Strip 4 (manual 14, 10.0.1.101) Port:0 "/>
+			<universe value="5"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="14"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="2C8C61CF-2B8F-4213-B8B4-2A89F65FF80C"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 4"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 4"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="4"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="5"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="5">
+			<title value="Ctrlr A Strip 3 (manual 15, 10.0.1.101) Port:0 "/>
+			<universe value="4"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="15"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="F54FB531-93F0-400B-91C6-F6EB0E27AD07"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 3"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 3"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="3"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="4"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="6">
+			<title value="Ctrlr A Strip 2 (manual 16, 10.0.1.101) Port:0 "/>
+			<universe value="3"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="16"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="550B8099-4D3E-4351-A0BE-9662FD9ECD7F"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 2"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 2"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="2"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="3"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="7">
+			<title value="Ctrlr A Strip 1 (manual 17, 10.0.1.101) Port:0 "/>
+			<universe value="2"/>
+			<activ value="1"/>
+			<in_out value="0"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="17"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="4BFEA5DB-E230-43D7-8595-1227049D2A3B"/>
+				<artnet_dev_type value="2"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="1"/>
+				<artnet_dev_enable_3 value="1"/>
+				<artnet_dev_enable_4 value="1"/>
+				<artnet_mac value="00:00:00:00:00:00"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="255"/>
+				<artnet_oem_manufacturer value="Artistic Licence Engineering Ltd"/>
+				<artnet_oem_product value="developer"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="Ctrlr A Strip 1"/>
+				<artnet_name_long value="Teensy Art-Net Endpoint controller A strip 1"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="1"/>
+				<artnet_universe_out_2 value="0"/>
+				<artnet_universe_out_3 value="0"/>
+				<artnet_universe_out_4 value="0"/>
+				<artnet_universe_virt_1 value="2"/>
+				<artnet_universe_virt_2 value="3"/>
+				<artnet_universe_virt_3 value="4"/>
+				<artnet_universe_virt_4 value="5"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<dmx_device version="0x03000000" index="8">
+			<title value="ArtNet Remote (MADRIX) Port:0 "/>
+			<universe value="1"/>
+			<activ value="1"/>
+			<in_out value="1"/>
+			<protocol value="1" info="Network Art-Net"/>
+			<frametime value="30"/>
+			<fullframes value="0"/>
+			<settings_artnet version="0x03000000">
+				<artnet_id value="0"/>
+				<artnet_id_bind_idx value="0"/>
+				<artnet_id_man value="00000000-0000-0000-0000-000000000000"/>
+				<artnet_dev_type value="3"/>
+				<artnet_dev_enable_1 value="1"/>
+				<artnet_dev_enable_2 value="0"/>
+				<artnet_dev_enable_3 value="0"/>
+				<artnet_dev_enable_4 value="0"/>
+				<artnet_mac value="00:0A:CD:29:F9:89"/>
+				<artnet_style value="0"/>
+				<artnet_major value="3"/>
+				<artnet_minor value="5"/>
+				<artnet_use_broadcast value="0"/>
+				<artnet_ip value="10.0.1.101"/>
+				<artnet_oem_code value="1220"/>
+				<artnet_oem_manufacturer value="inoage"/>
+				<artnet_oem_product value="MADRIX3"/>
+				<artnet_esta_1 value="65"/>
+				<artnet_esta_2 value="73"/>
+				<artnet_config_by_web value="0"/>
+				<artnet_name_short value="ArtNet Remote"/>
+				<artnet_name_long value="ArtNet Remote, to remote control MADRIX via ArtNet"/>
+				<artnet_port_numbers value="1"/>
+				<artnet_port_type_1 value="2" info="output"/>
+				<artnet_port_type_2 value="0" info="none"/>
+				<artnet_port_type_3 value="0" info="none"/>
+				<artnet_port_type_4 value="0" info="none"/>
+				<artnet_port_protocol_1 value="5"/>
+				<artnet_port_protocol_2 value="5"/>
+				<artnet_port_protocol_3 value="5"/>
+				<artnet_port_protocol_4 value="5"/>
+				<artnet_port_sub_net value="0"/>
+				<artnet_universe_in_1 value="0"/>
+				<artnet_universe_in_2 value="0"/>
+				<artnet_universe_in_3 value="0"/>
+				<artnet_universe_in_4 value="0"/>
+				<artnet_universe_out_1 value="0"/>
+				<artnet_universe_out_2 value="1"/>
+				<artnet_universe_out_3 value="2"/>
+				<artnet_universe_out_4 value="3"/>
+				<artnet_universe_virt_1 value="1"/>
+				<artnet_universe_virt_2 value="2"/>
+				<artnet_universe_virt_3 value="3"/>
+				<artnet_universe_virt_4 value="4"/>
+				<artnet_frame_time_1 value="30"/>
+				<artnet_frame_time_2 value="30"/>
+				<artnet_frame_time_3 value="30"/>
+				<artnet_frame_time_4 value="30"/>
+				<artnet_full_frames_1 value="0"/>
+				<artnet_full_frames_2 value="0"/>
+				<artnet_full_frames_3 value="0"/>
+				<artnet_full_frames_4 value="0"/>
+				<artnet_bind_ip value="0.0.0.0"/>
+			</settings_artnet>
+		</dmx_device>
+		<!--DMX IN Device Settings with 0 DMX Devices-->
+	</dmx_device_settings>
+</madrix_device_settings_dmx>
